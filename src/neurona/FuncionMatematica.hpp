@@ -2,14 +2,16 @@
 #define FUNCION_MATEMATICA_HPP
 
 #include <vector>
-#include <cmath>
 #include <iostream>
 
-
-class FuncionMatematica
+class FuncionMatematica  // clase virtual para heredas a mas funciones matematicas
 {
+protected:
+    float expoSercano(float expo) const;
 
-    float Funcion_escalon(float suma);
+public:
+    virtual float activacion(float variable) const = 0;
+    virtual ~FuncionMatematica() {}
+
 };
-
-#endif 
+#endif

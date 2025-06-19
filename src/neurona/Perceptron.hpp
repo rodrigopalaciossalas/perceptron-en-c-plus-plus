@@ -1,33 +1,24 @@
 #ifndef PERCEPTRON_HPP
 #define PERCEPTRON_HPP
 
-#include <vector>
-#include <random>      // pesos aleatorios
 #include <iostream>
 #include "FuncionMatematica.hpp"
 
 class Perceptron
 {
-    public:
-        float* pesos;    //investigar el uso de la libreria <vector> creo q seria mas facil que con punteros
+    protected:
+        float* pesos; 
         float t_aprendisaje;
         float sesgo;
-        int Num_entradas;   
-    
-    void entrenamiento(float* datos_ingresados, float salida_esperada);
-    float predecir(float* datos_ingresados);
+        int Num_entradas;
+        FuncionMatematica* funcion_matematica;
+    public:
+    Perceptron();
+    Perceptron(int Num_entradas, float t_aprendisaje, FuncionMatematica* funcion_matematica);
+    ~Perceptron();
 
-    void establecer_pesos(float* N_pesos);
-    const float obtener_pesos() const;
-
-    Perceptron(int N_entradas, float T_aprendisaje);
-
-    ~Perceptron()
-    {
-        delete[] pesos;
-        if (pesos != nullptr)
-            pesos = nullptr;
-    }
+    float predecir(float* entrada);
+    void entrenar(float* entrada, float salida_esperada);
 };     
 
 #endif
