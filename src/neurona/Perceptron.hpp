@@ -2,7 +2,7 @@
 #define PERCEPTRON_HPP
 
 #include <iostream>
-#include "FuncionMatematica.hpp"
+#include "funcion_activacion/FuncionMatematica.hpp"
 
 class Perceptron
 {

@@ -2,3 +2,12 @@
 0.0,1.0,1.0,0.0
 1.0,0.0,1.0,0.0
 1.0,1.0,1.0,1.0
+
+comandos
+g++ main.cpp \
+    neurona/Perceptron.cpp \
+    neurona/funcion_activacion/escalon.cpp \
+    neurona/funcion_activacion/sigmoide.cpp \
+    neurona/funcion_activacion/funcionMatematica.cpp \
+    neurona/funcion_activacion/lineal.cpp \
+    -o main
