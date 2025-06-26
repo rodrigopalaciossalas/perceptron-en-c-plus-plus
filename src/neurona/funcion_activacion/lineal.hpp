@@ -4,9 +4,7 @@
 #include "FuncionMatematica.hpp"
 
 class Lineal : public FuncionMatematica {
-public:
-    Lineal();                
-    virtual ~Lineal();        
+public:      
 
     float activacion(float y) const override;
 };

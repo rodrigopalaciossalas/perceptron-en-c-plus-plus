@@ -3,7 +3,7 @@
 1.0,0.0,1.0,0.0
 1.0,1.0,1.0,1.0
 
-comandos
+comandos linux
 g++ main.cpp \
     neurona/Perceptron.cpp \
     neurona/funcion_activacion/escalon.cpp \
@@ -11,3 +11,17 @@ g++ main.cpp \
     neurona/funcion_activacion/funcionMatematica.cpp \
     neurona/funcion_activacion/lineal.cpp \
     -o main
+
+comandos windows 
+g++ -o main *.cpp \
+    neurona/funcion_activacion/sigmoide.cpp \ 
+    neurona/funcion_activacion/funcionMatematica.cpp \
+    neurona/funcion_activacion/lineal.cpp \ 
+    neurona/Perceptron.cpp \
+    neurona/funcion_activacion/escalon.cpp \
+
+g++ -o main *.cpp neurona/funcion_activacion/sigmoide.cpp neurona/funcion_activacion/funcionMatematica.cpp neurona/funcion_activacion/lineal.cpp neurona/Perceptron.cpp neurona/funcion_activacion/escalon.cpp
+
+compilar 
+
+./main

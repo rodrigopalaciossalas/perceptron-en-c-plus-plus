@@ -50,4 +50,3 @@ int main() {
                   << " = " << p_lin.predecir(entradas[i]) << "\n";
     return 0;
 }
-
