@@ -1,9 +1,9 @@
-#ifndef CAPAENTRADA_HPP
-#define CAPAENTRADA_HPP
+#ifndef CAPADENSA_HPP
+#define CAPADENSA_HPP
 
-#include "../Perceptron.hpp"
-#include "../funcion_activacion/FuncionMatematica.hpp"
-#include "CapaBase.hpp"
+#include "../../neurona/Perceptron.hpp"
+#include "../../neurona/funcion_activacion/FuncionMatematica.hpp"
+#include "capaBase.hpp"
 
 class capaDensa : public CapaBase
 {
