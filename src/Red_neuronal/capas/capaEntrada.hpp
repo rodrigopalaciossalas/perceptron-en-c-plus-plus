@@ -6,12 +6,14 @@
 #include "capaBase.hpp"
 
 
-class CapaEntrada : public CapaBase{
-    
+class CapaEntrada : virtual public CapaBase
+{
+
+
     public:
-    void Forward(float* entrada) override;
-    float* Osalida() const override;
-    CapaEntrada(int Nneuronas);
+        void Forward(float* entrada) override;
+        float* Osalida() const override;
+        CapaEntrada(int Nneuronas) : (Nneuronas);
 
 };
 

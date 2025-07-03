@@ -5,7 +5,7 @@
 #include "../../neurona/funcion_activacion/FuncionMatematica.hpp"
 #include "capaBase.hpp"
 
-class capaDensa : public CapaBase
+class capaDensa : virtual public CapaBase
 {
     protected:
         Perceptron **neurona;
