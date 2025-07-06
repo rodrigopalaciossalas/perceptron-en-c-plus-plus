@@ -21,7 +21,6 @@ int main() {
     Lineal linial;
 
     Perceptron p_lin(2, 0.5f, &linial);
-
     Perceptron p_sig(2, 0.5f, &sigmoide);
     Perceptron p_esc(2, 0.5f, &escalon);
 

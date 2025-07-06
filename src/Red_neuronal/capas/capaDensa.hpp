@@ -3,7 +3,7 @@
 
 #include "../../neurona/Perceptron.hpp"
 #include "../../neurona/funcion_activacion/FuncionMatematica.hpp"
-#include "capaBase.hpp"
+#include "CapaBase.hpp"
 
 class capaDensa : virtual public CapaBase
 {

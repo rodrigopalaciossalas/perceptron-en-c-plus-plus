@@ -1,20 +1,14 @@
-#ifndef CAPAENTRADA_HPP
-#define CAPAENTRADA_HPP
+#ifndef CAPA_ENTRADA_HPP
+#define CAPA_ENTRADA_HPP
 
+#include "CapaBase.hpp"
 
-#include <iostream>
-#include "capaBase.hpp"
+class CapaEntrada : public CapaBase {
+public:
+    CapaEntrada(int nEntradas)
+        : CapaBase(nEntradas, nEntradas) {}
 
-
-class CapaEntrada : virtual public CapaBase
-{
-
-
-    public:
-        void Forward(float* entrada) override;
-        float* Osalida() const override;
-        CapaEntrada(int Nneuronas) : (Nneuronas);
-
+    void Forward(float* datos) override;
 };
 
 #endif

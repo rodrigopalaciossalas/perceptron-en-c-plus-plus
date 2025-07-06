@@ -16,9 +16,8 @@ class CapaBase
         
         virtual ~CapaBase();
         virtual void Forward(float* entrada) = 0;
-        virtual float* Osalida() const = 0;
         
-        float *Getsalida() const;
+        virtual float* Osalida() const; 
         int GetnEntradas() const;
         int GetnNeuronas() const;
 
@@ -27,5 +26,3 @@ class CapaBase
 };
 
 #endif
-
-
