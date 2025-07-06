@@ -5,7 +5,7 @@
 int main() {
     sigmoide funcion;
 
-    capaSalida capaSalida(3, 1, &funcion); // por ejemplo: 3 entradas (de capa oculta), 1 salida
+    capaSalida capaSalida(3, 1, &funcion); 
 
     float datosOcultos[3] = {0.8f, 0.4f, 0.6f};
     capaSalida.Forward(datosOcultos);

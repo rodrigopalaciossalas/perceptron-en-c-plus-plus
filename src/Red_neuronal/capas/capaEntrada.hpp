@@ -3,7 +3,7 @@
 
 #include "CapaBase.hpp"
 
-class CapaEntrada : public CapaBase {
+class CapaEntrada : virtual public CapaBase {
 public:
     CapaEntrada(int nEntradas)
         : CapaBase(nEntradas, nEntradas) {}

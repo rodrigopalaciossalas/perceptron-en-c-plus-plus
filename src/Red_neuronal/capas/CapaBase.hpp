@@ -11,13 +11,12 @@ class CapaBase
         float * salida;
     public:
 
-        CapaBase(int nEntradas, int nNeuronas) 
-            : nEntradas(nEntradas), nNeuronas(nNeuronas){}
+        CapaBase(int nEntradas, int nNeuronas);
         
         virtual ~CapaBase();
         virtual void Forward(float* entrada) = 0;
         
-        virtual float* Osalida() const; 
+        float* Osalida() const; 
         int GetnEntradas() const;
         int GetnNeuronas() const;
 

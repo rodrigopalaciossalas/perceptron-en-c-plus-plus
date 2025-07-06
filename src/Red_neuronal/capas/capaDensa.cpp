@@ -1,33 +1,29 @@
 #include "capaDensa.hpp"
 
-capaDensa::capaDensa(int Nentradas, int Nneuronas, FuncionMatematica* funcion)
-    :   Nentradas(Nentradas),Nneuronas(Nneuronas){
-        
-        neurona = new Perceptron*[Nneuronas];
-        salida = new float[Nneuronas];
+capaDensa::capaDensa(int nEntradas, int nNeuronas, FuncionMatematica* funcion) 
+            : CapaBase(nEntradas, nNeuronas){
+                this->neurona = new Perceptron*[nNeuronas];
+                
+                for(int n = 0; n < nNeuronas; ++n){
+                    this->neurona[n] = new Perceptron(nEntradas, 0.1f, funcion);
+                }
+                this->salida = new float[nNeuronas];
+            }
 
-        for(int i; i < Nneuronas; ++i)
-        {
-            neurona[i] = new Perceptron(Nentradas,0.1f,funcion);
-            
-        }
-}
-capaDensa::~capaDensa()
-{
-    for (int i = 0; i < Nneuronas; ++i)
-        delete neurona[i];
-    delete[] neurona;
-    delete[] salida;
-}
-
-void capaDensa::Forward(float* entradas)
-{
-    for(int i; i < Nneuronas; ++i)
-    {
-        salida[i] = neurona[i] -> predecir(entradas); 
+void capaDensa::Forward(float* entradas){
+    for(int i = 0; i < nNeuronas; ++i){
+        salida[i] = neurona[i] -> predecir(entradas);
     }
 }
-float* capaDensa::Osalida() const
-{
-    return salida;
+
+Perceptron* capaDensa::getNeuronas(int New) const {
+            return neurona[New];
+        }
+
+capaDensa::~capaDensa(){
+    for(int n = 0; n < nNeuronas; ++n){
+       delete this->neurona[n];
+    }
+    delete[] this->neurona; 
 }
+
