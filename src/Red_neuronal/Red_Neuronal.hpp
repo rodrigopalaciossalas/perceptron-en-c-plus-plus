@@ -15,6 +15,8 @@ class Red_Neuronal{
         float* salida();
 
         ~Red_Neuronal();
+        void imprimir() const;
+        void imprimirResultado() const;
 };
 
 

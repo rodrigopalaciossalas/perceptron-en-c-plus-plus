@@ -23,3 +23,6 @@ CapaEntrada::~CapaEntrada() {
     }
 
 }
+void CapaEntrada::imprimir() const {
+    std::cout << "Capa Entrada: " << nNeuronas << " entradas\n";
+}

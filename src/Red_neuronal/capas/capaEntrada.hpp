@@ -9,6 +9,8 @@ public:
 
     void Forward(float* datos) override;
     ~CapaEntrada();
+    void imprimir() const override;
+
 };
 
 #endif

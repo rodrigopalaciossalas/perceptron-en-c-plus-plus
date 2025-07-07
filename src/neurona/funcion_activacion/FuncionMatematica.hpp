@@ -3,11 +3,10 @@
 
 #include <vector>
 #include <iostream>
+#include <cmath>
 
 class FuncionMatematica  // clase virtual para heredas a mas funciones matematicas
 {
-protected:
-    float expoSercano(float expo) const;
 
 public:
     virtual float activacion(float variable) const = 0;

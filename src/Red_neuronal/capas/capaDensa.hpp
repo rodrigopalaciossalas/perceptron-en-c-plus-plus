@@ -15,6 +15,6 @@ class capaDensa : virtual public CapaBase
         ~capaDensa() override;
 
         Perceptron* getNeuronas(int New) const;
-
+        void imprimir() const;
 };
 #endif

@@ -15,11 +15,12 @@ class CapaBase
         
         virtual ~CapaBase();
         virtual void Forward(float* entrada) = 0;
-        
+        virtual void imprimir() const = 0;
+
         float* Osalida() const; 
         int GetnEntradas() const;
         int GetnNeuronas() const;
-
+        
 
 
 };

@@ -9,5 +9,7 @@ class capaSalida : virtual public CapaBase {
         capaSalida(int nEntradas, int nNueronas, FuncionMatematica *funcion);
         ~capaSalida();
         void Forward(float* entrada) override;
+        void imprimir() const override;
+
 
 };

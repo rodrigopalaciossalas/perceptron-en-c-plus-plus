@@ -2,6 +2,8 @@
 #define PERCEPTRON_HPP
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include "funcion_activacion/FuncionMatematica.hpp"
 
 class Perceptron
@@ -19,6 +21,8 @@ class Perceptron
 
     float predecir(float* entrada);
     void entrenar(float* entrada, float salida_esperada);
+    float getPeso(int i) const;
+    float getSesgo() const;
 };     
 
 #endif

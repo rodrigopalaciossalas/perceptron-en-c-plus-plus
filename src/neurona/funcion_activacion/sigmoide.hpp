@@ -2,7 +2,7 @@
 #define SIGMOIDE_HPP
 
 #include "FuncionMatematica.hpp"
-
+#include <cmath>
 class sigmoide : public FuncionMatematica
 {
     public:

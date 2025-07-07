@@ -12,16 +12,16 @@ Perceptron::Perceptron()
 
 Perceptron::Perceptron(int Num_entradas, float t_aprendisaje, FuncionMatematica* funcion_matematica)
 {
-    this -> Num_entradas = Num_entradas;
-    this -> t_aprendisaje = t_aprendisaje;
-    this -> sesgo = 0.0f;
-    this -> funcion_matematica = funcion_matematica;
+    this->Num_entradas = Num_entradas;
+    this->t_aprendisaje = t_aprendisaje;
+    this->funcion_matematica = funcion_matematica;
 
     pesos = new float[Num_entradas];
-        for(int i = 0; i < Num_entradas; i++)
-            {
-                pesos[i] = 0.0f;
-            }
+    for (int i = 0; i < Num_entradas; i++) {
+        pesos[i] = ((float)std::rand() / RAND_MAX) - 0.5f;
+    }
+
+    sesgo = ((float)std::rand() / RAND_MAX) - 0.5f;
 }
 Perceptron::~Perceptron()
 {
@@ -59,4 +59,12 @@ void Perceptron::entrenar(float* datos_ingresados, float salida_esperada)
 
     // sesgo
     sesgo += t_aprendisaje * error;
+}
+
+float Perceptron::getPeso(int i) const {
+    return pesos[i];
+}
+
+float  Perceptron::getSesgo() const {
+    return sesgo;
 }

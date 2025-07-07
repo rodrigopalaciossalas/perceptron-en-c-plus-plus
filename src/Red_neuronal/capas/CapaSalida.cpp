@@ -30,3 +30,15 @@ capaSalida::~capaSalida() {
         neurona = nullptr;
     }
 }
+void capaSalida::imprimir() const {
+    std::cout << "capa salida: " << nNeuronas << " neuronas" << std::endl;
+    for (int i = 0; i < nNeuronas; ++i) {
+        std::cout << "  neurona " << i << ":" << std::endl;
+        std::cout << "    pesos: ";
+        for (int j = 0; j < nEntradas; ++j) {
+            std::cout << neurona[i]->getPeso(j) << " ";
+        }
+        std::cout << std::endl;
+        std::cout << "   sesgo: " << neurona[i]->getSesgo() << std::endl;
+    }
+}
