@@ -1,19 +1,28 @@
 #include <iostream>
-#include "Red_neuronal/capas/CapaSalida.hpp"
 #include "neurona/funcion_activacion/sigmoide.hpp"
+#include "Red_neuronal/Red_Neuronal.hpp"
+#include "Red_neuronal/capas/CapaBase.hpp"
+#include "Red_neuronal/capas/capaDensa.hpp"
+#include "Red_neuronal/capas/capaEntrada.hpp"
+#include "Red_neuronal/capas/CapaSalida.hpp"
 
 int main() {
     sigmoide funcion;
 
-    capaSalida capaSalida(3, 1, &funcion); // por ejemplo: 3 entradas (de capa oculta), 1 salida
+    Red_Neuronal red;
 
-    float datosOcultos[3] = {0.8f, 0.4f, 0.6f};
-    capaSalida.Forward(datosOcultos);
+    red.nuevaCapa(new CapaEntrada(2)); 
+    red.nuevaCapa(new capaDensa(3, 4, &funcion));   
+    red.nuevaCapa(new capaDensa(3, 2, &funcion));    
+    red.nuevaCapa(new capaSalida(2, 1, &funcion));   
 
-    float* salida = capaSalida.Osalida();
-    for (int i = 0; i < capaSalida.GetnNeuronas(); ++i) {
-        std::cout << "Salida " << i << ": " << salida[i] << "\n";
-    }
+    float datos[2] = {1.0f, 0.0f};
+
+    red.propagacion(datos);
+
+    float* salida = red.salida();
+
+    std::cout << "Salida final: " << salida[0] << "\n";
 
     return 0;
 }

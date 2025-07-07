@@ -5,10 +5,10 @@
 
 class CapaEntrada : virtual public CapaBase {
 public:
-    CapaEntrada(int nEntradas)
-        : CapaBase(nEntradas, nEntradas) {}
+    CapaEntrada(int nEntradas);
 
     void Forward(float* datos) override;
+    ~CapaEntrada();
 };
 
 #endif
